@@ -44,9 +44,6 @@ function S3List() {
         </button>
       </div>
 
-      <div className="text-xs font-medium">
-        {process.env.NEXT_PUBLIC_AWS_REGION}
-      </div>
       <div className="col-span-4 bg-base-200 -z-10">
         {/* Start skill list*/}
         <div className="col-span-4 bg-base-200">
@@ -54,7 +51,9 @@ function S3List() {
             <table className="table lg:table-md md:table-md sm:table-sm xs:table-xs">
               <thead>
                 <tr>
-                  <th>Key</th>
+                  <th className="font-bold">
+                    Key {process.env.NEXT_PUBLIC_AWS_BUCKET_NAME}
+                  </th>
                   <th>Last Modifed</th>
                   <th>ETag</th>
                   <th>Size</th>
