@@ -18,7 +18,7 @@ export const dynamic = "force-dynamic"; // defaults to auto
 export async function GET(request: Request) {
   const params: ListObjectsV2CommandInput = {
     Bucket: "sbri-webstorage",
-    MaxKeys: 10,
+    MaxKeys: 20,
   };
   try {
     const command = new ListObjectsV2Command(params);
