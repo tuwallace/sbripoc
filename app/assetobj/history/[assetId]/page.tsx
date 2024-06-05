@@ -7,7 +7,6 @@ import NavBar from "@/app/components/navbar";
 
 
 
-
 export default async function AssetHistory({params} : {params:{assetId: string}}) {
 
   let assetId = decodeURIComponent(params.assetId)
