@@ -44,6 +44,9 @@ function S3List() {
         </button>
       </div>
 
+      <div className="text-xs font-medium">
+        {process.env.NEXT_PUBLIC_AWS_REGION}
+      </div>
       <div className="col-span-4 bg-base-200 -z-10">
         {/* Start skill list*/}
         <div className="col-span-4 bg-base-200">

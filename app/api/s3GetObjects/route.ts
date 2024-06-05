@@ -7,23 +7,22 @@ import {
 } from "@aws-sdk/client-s3";
 
 const s3Client = new S3Client({
-  region: process.env.NEXT_PUBLIC_AWS_REGION!,
+  region: "us-east-1",
   credentials: {
-    accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY!,
-    secretAccessKey: process.env.NEXT_PUBLIC_AWS_SECRET_KEY!,
+    accessKeyId: "AKIATCKAS3K4YDO3OX2U",
+    secretAccessKey: "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",
   },
 });
 
 export const dynamic = "force-dynamic"; // defaults to auto
 export async function GET(request: Request) {
   const params: ListObjectsV2CommandInput = {
-    Bucket: process.env.NEXT_PUBLIC_AWS_BUCKET_NAME,
+    Bucket: "sbri-webstorage",
     MaxKeys: 10,
   };
   try {
     const command = new ListObjectsV2Command(params);
     const rc: ListObjectsV2Output = await s3Client.send(command);
-    console.log(rc.Contents);
     return NextResponse.json(
       { msg: `Get Lists of Object Successed`, result: rc.Contents },
       { status: 200 }
