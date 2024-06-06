@@ -6,10 +6,10 @@ import {
 } from "@aws-sdk/client-s3";
 
 const s3Client = new S3Client({
-  region: "us-east-1",
+  region: process.env.NEXT_PUBLIC_AWS_REGION!,
   credentials: {
-    accessKeyId: "AKIATCKAS3K4YDO3OX2U",
-    secretAccessKey: "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",
+    accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY!,
+    secretAccessKey: process.env.NEXT_PUBLIC_AWS_SECRET_KEY!,
   },
 });
 
